@@ -56,7 +56,7 @@ app.use('/api',(req,res)=>{
 app.use('/',(req,res)=>{
 
 	
-	res.status(200).redirect('/public/index.html');
+	res.send('bienbenido');
 });
 
 app.listen(PORT,()=>{

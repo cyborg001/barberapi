@@ -35,7 +35,6 @@ app.use('/createCliente',(req,res)=>{
 			res.write('<p>');
 			res.write(req.body.nombre);
 			res.write('<p>');
-			res.write("<a href='/'>volver atras</a>");
 			res.end();
 		}
 		
@@ -70,7 +69,7 @@ app.listen(PORT,()=>{
 			if(err){
 				console.log("Error: "+err);
 			}else{
-				res.end('success');
+				console.log('success');
 			}
 		})
 	}

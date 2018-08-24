@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express()
-
+const PORT = process.env.PORT || 5000
 
 app.set('view engine','ejs');
 
@@ -60,8 +60,8 @@ app.use('/',(req,res)=>{
 	res.status(200).redirect('/public/index.html');
 });
 
-app.listen(5000,()=>{
-	console.log('Listening on port 5000')
+app.listen(PORT,()=>{
+	console.log('Listening on port'+PORT)
 	let hora = new Date().getHours();
 	console.log(hora);
 	if(hora >= 22){

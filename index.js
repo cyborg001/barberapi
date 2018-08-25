@@ -48,7 +48,7 @@ app.use('/api',(req,res)=>{
 			res.type('html').status(500);
 			res.send('Error: '+err);
 		}else{
-			res.json(clientes);
+			res.render('Lista',clientes);
 		}
 	});
 });

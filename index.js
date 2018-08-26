@@ -43,12 +43,16 @@ app.use('/createCliente',(req,res)=>{
 
 });
 app.use('/api',(req,res)=>{
-	Cliente.find({},(err,clientes)=>{
+	Cliente.find((err,clientes)=>{
 		if(err){
 			res.type('html').status(500);
 			res.send('Error: '+err);
+		}else if(clientes.length==0){
+			res.type('html').status(200);
+			res.send('No hay clientes');
+
 		}else{
-			res.render('Lista',clientes);
+			res.render('lista',{people:clientes});
 		}
 	});
 });
